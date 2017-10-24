@@ -1,4 +1,4 @@
-# docker-geoipupdate
+# Docker Geoipupdate
 
 Minimal container for updating Maxmind GeoIP databases on your host system without having to install the required dependencies.
 
