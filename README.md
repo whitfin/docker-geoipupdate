@@ -8,7 +8,7 @@ It includes everything you need to customize your installation, whilst remaining
 
 This image is designed to be executed as a single command, to invoke `geoipupdate` from your host.
 
-```shell
+```bash
 # download defaults into ./geoip
 $ docker run --rm \
     -v ./geoip:/usr/local/share/GeoIP \
