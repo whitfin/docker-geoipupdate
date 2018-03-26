@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM ruby:alpine
 
 ARG VERSION
 RUN apk add --update curl && \
@@ -24,5 +24,12 @@ RUN apk add --update curl && \
     rm -rf /tmp/geoipupdate* && \
     rm -rf /var/cache/apk/*
 
+ENV VALID_GEOIP_IP 185.244.215.243
+ENV GEOIP_USER_ID
+ENV GEOIP_PRODUCT_IDS GeoIP2-City
+ENV GEOIP_LICENSE_KEY
+ENV GEOIP_DIRECTORY /usr/local/share/GeoIP
+
+COPY validate_mmdb.rb /
 ADD src/exec.sh /
 CMD [ "/exec.sh" ]
