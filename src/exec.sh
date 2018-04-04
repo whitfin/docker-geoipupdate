@@ -15,5 +15,5 @@ geoipupdate -f $GEOIP_CONFIG_FILE -v
 ruby validate_mmdb.rb /tmp/GeoIP2-City.mmdb ${VALID_GEOIP_IP}
 
 [[ ! -d ${GEOIP_DIRECTORY} ]] && mkdir -p ${GEOIP_DIRECTORY}
-mv /tmp/GeoIP2-City.mmdb ${GEOIP_DIRECTORY}
+mv /tmp/GeoIP2-City.mmdb ${GEOIP_DIRECTORY}/geoip.mmdb
 
