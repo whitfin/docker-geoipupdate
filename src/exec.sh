@@ -6,7 +6,7 @@
     echo "UserId ${GEOIP_USER_ID:-"999999"}" > $GEOIP_CONFIG_FILE
     echo "LicenseKey ${GEOIP_LICENSE_KEY:-"000000000000"}" >> $GEOIP_CONFIG_FILE
     echo "ProductIds ${GEOIP_PRODUCT_IDS:-"GeoLite2-City"}" >> $GEOIP_CONFIG_FILE
-    echo "DatabaseDirectory /tmp/}" >> $GEOIP_CONFIG_FILE
+    echo "DatabaseDirectory /tmp " >> $GEOIP_CONFIG_FILE
 }
 
 # execute the updates with verbose output

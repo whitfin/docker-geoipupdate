@@ -29,3 +29,25 @@ $ docker run --rm \
     -v ./geoip:/usr/local/share/GeoIP \
     whitfin/geoipupdate
 ```
+
+### Environment Variables
+
+#### GEOIP_DIRECTORY
+
+Directory where the GeoIP mmdb file is installed to
+
+#### GEOIP_PRODUCT_IDS
+
+Space separated string of all MaxMind GeoIP products
+
+#### GEOIP_USER_ID
+
+User ID of the GeoIP account
+
+#### GEOIP_LICENSE_KEY
+
+License key for GeoIP DB product
+
+#### VALID_GEOIP_IP
+
+IP to test connection to GeoIP service
