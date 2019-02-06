@@ -2,7 +2,7 @@
 
 # set a configuration file if not already set
 ! (: "${GEOIP_CONFIG_FILE?}") 2>/dev/null && {
-    GEOIP_CONFIG_FILE="/usr/local/etc/GeoIP.conf"
+    GEOIP_CONFIG_FILE="/etc/GeoIP.conf"
     [[ ! -z $GEOIP_USER_ID ]] && {
         echo "UserId $GEOIP_USER_ID" > $GEOIP_CONFIG_FILE
     }
