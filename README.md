@@ -22,7 +22,7 @@ $ docker run --rm \
 
 # download into ./geoip using manually configured settings
 $ docker run --rm \
-    -e GEOIP_USER_ID=999999 \
+    -e GEOIP_ACCOUNT_ID=999999 \
     -e GEOIP_LICENSE_KEY=000000000000 \
     -e GEOIP_PRODUCT_IDS='GeoLite2-City GeoLite2-Country' \
     -e GEOIP_DIRECTORY='/usr/local/share/GeoIP' \

@@ -4,7 +4,7 @@
 ! (: "${GEOIP_CONFIG_FILE?}") 2>/dev/null && {
     GEOIP_CONFIG_FILE="/etc/GeoIP.conf"
     [[ ! -z $GEOIP_USER_ID ]] && {
-        echo "UserId $GEOIP_USER_ID" > $GEOIP_CONFIG_FILE
+        echo "AccountID $GEOIP_ACCOUNT_ID" > $GEOIP_CONFIG_FILE
     }
     [[ ! -z $GEOIP_LICENSE_KEY ]] && {
         echo "LicenseKey $GEOIP_LICENSE_KEY" > $GEOIP_CONFIG_FILE
