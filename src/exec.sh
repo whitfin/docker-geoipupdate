@@ -7,7 +7,7 @@
         echo "UserId $GEOIP_USER_ID" > $GEOIP_CONFIG_FILE
     }
     [[ ! -z $GEOIP_LICENSE_KEY ]] && {
-        echo "LicenseKey $GEOIP_LICENSE_KEY" > $GEOIP_CONFIG_FILE
+        echo "LicenseKey $GEOIP_LICENSE_KEY" >> $GEOIP_CONFIG_FILE
     }
     echo "ProductIds ${GEOIP_PRODUCT_IDS:-"GeoLite2-City GeoLite2-Country"}" >> $GEOIP_CONFIG_FILE
     echo "DatabaseDirectory ${GEOIP_DIRECTORY:-"/usr/local/share/GeoIP"}" >> $GEOIP_CONFIG_FILE
