@@ -24,5 +24,4 @@ jobs:
         install: true
     - uses: docker/build-push-action@v4
       with:
-        build-args:
-        - VERSION=${{ matrix.version }}
+        build-args: VERSION=${{ matrix.version }}
