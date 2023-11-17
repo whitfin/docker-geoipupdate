@@ -22,10 +22,13 @@ $ docker run --rm \
 
 # download into ./geoip using manually configured settings
 $ docker run --rm \
-    -e GEOIP_USER_ID=999999 \
+    -e GEOIP_ACCOUNT_ID=999999 \
     -e GEOIP_LICENSE_KEY=000000000000 \
-    -e GEOIP_PRODUCT_IDS='GeoLite2-City GeoLite2-Country' \
+    -e GEOIP_EDITION_IDS='GeoLite2-City GeoLite2-Country' \
     -e GEOIP_DIRECTORY='/usr/local/share/GeoIP' \
     -v ./geoip:/usr/local/share/GeoIP \
     whitfin/geoipupdate
 ```
+
+If you are on older versions of `geoipupdate`, you might need to provide the `GEOIP_USER_ID` instead of `GEOIP_ACCOUNT_ID` and `GEOIP_PRODUCT_IDS` instead of `GEOIP_EDITION_IDS`.
+

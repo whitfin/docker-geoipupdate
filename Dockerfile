@@ -1,20 +1,16 @@
 # need to use go as the build image
 FROM golang:alpine as build
 
-# install git and clone repo
-RUN apk add --update curl git
-RUN git clone https://github.com/maxmind/geoipupdate.git /tmp/build
+# install git to clone repo
+RUN apk add --update git
 
 # checkout tag
+ENV GOPATH=/opt/geoipupdate
 ARG VERSION
-WORKDIR /tmp/build
-RUN git checkout ${VERSION}
 
 # build binary for alpine
-ENV GOPATH /tmp/build
-WORKDIR /tmp/build/cmd/geoipupdate
-RUN go get -t ./... 2> /dev/null; exit 0
-RUN go build
+RUN MAJOR=$(echo $VERSION | awk '{print substr($0,1,2)}') && \
+    go install github.com/maxmind/geoipupdate/$MAJOR/cmd/geoipupdate@$VERSION
 
 # final image
 FROM alpine:latest
@@ -24,7 +20,7 @@ RUN apk add --update ca-certificates && \
     rm -rf /var/cache/apk/*
 
 # copy the binary over from the build image, directly into bin dir
-COPY --from=build /tmp/build/cmd/geoipupdate/geoipupdate /usr/bin/
+COPY --from=build /opt/geoipupdate/bin/geoipupdate /usr/bin/
 
 # configure startup
 ADD src/exec.sh /
