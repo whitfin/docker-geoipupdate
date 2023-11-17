@@ -1,5 +1,7 @@
 # Docker Geoipupdate
 
+[![Build Status](https://img.shields.io/github/actions/workflow/status/whitfin/docker-geoipupdate/ci.yml?branch=main)](https://github.com/whitfin/docker-geoipupdate/actions)
+
 Minimal container for updating Maxmind GeoIP databases on your host system without having to install the required dependencies.
 
 It includes everything you need to customize your installation, whilst remaining much smaller than the other `geoipupdate` images on Docker Hub (approximately 6MB).
